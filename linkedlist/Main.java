@@ -20,5 +20,7 @@ public class Main {
         myLinkedList.printList();
         System.out.println(myLinkedList.remove(2));
         myLinkedList.printList();
+        myLinkedList.reverse();
+        myLinkedList.printList();
     }
 }
