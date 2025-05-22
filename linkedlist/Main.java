@@ -1,4 +1,4 @@
-package udmyDs.linkedlist;
+package DSUDMY.linkedlist;
 
 public class Main {
     public static void main(String[] args) {
@@ -18,7 +18,7 @@ public class Main {
         myLinkedList.printList();
         System.out.println(myLinkedList.insert(2, 8));
         myLinkedList.printList();
-        System.out.println(myLinkedList.remove(2).value);
+        System.out.println(myLinkedList.remove(2));
         myLinkedList.printList();
     }
 }
