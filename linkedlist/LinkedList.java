@@ -1,4 +1,4 @@
-package udmyDs.linkedlist;
+package DSUDMY.linkedlist;
 
 public class LinkedList {
 
