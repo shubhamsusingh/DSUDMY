@@ -10,5 +10,9 @@ public class Main {
         dlist.append(5);
         dlist.printDList();
         dlist.printRev();
+        System.out.println("removed from Last : " + dlist.removeLast().value);
+        dlist.printDList();
+        dlist.preAppend(8);
+        dlist.printDList();
     }
 }
