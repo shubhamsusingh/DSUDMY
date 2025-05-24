@@ -37,21 +37,58 @@ public class LinkedList {
         return true;
     }
 
+    public boolean preAppend(int data) {
+        Node newNode = new Node(data);
+        if (size == 0) {
+            head = tail = newNode;
+            return true;
+        } else {
+            newNode.next = head;
+            head.prev = newNode;
+            head = newNode;
+        }
+
+        size++;
+        return true;
+
+    }
+
     public void printDList() {
         Node temp = head;
         while (temp != null) {
-            System.out.println(temp.value);
+            System.out.print(temp.value + "->");
             temp = temp.next;
         }
+        System.out.println("null");
         return;
     }
 
     public void printRev() {
         Node temp = tail;
+        System.out.print("null");
         while (temp != null) {
-            System.out.println(temp.value);
+            System.out.print("<-" + temp.value);
             temp = temp.prev;
         }
+        System.out.println("<-null");
         return;
     }
+
+    public Node removeLast() {
+        if (size == 0) {
+            return null;
+        }
+        Node temp = tail;
+        if (size == 1) {
+            head = tail = null;
+        } else {
+            tail = tail.prev;
+            tail.next = null;
+            temp.prev = null;
+        }
+
+        size--;
+        return temp;
+    }
+
 }
