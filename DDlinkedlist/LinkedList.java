@@ -91,4 +91,34 @@ public class LinkedList {
         return temp;
     }
 
+    public Node removeFirst() {
+        if (size == 0) {
+            return null;
+        }
+        Node temp = head;
+        head = head.next;
+        temp.next = null;
+        head.prev = null;
+        size--;
+        return temp;
+    }
+
+    public Node get(int index) {
+        if (index < 0 || index >= size) {
+            return null;
+        }
+        Node temp = head;
+        if (index < size / 2) {
+            for (int i = 0; i < index; i++) {
+                temp = temp.next;
+            }
+        } else {
+            temp = tail;
+            for (int i = size - 1; i > index; i--) {
+                temp = temp.prev;
+            }
+        }
+        return temp;
+    }
+
 }

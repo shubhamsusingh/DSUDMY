@@ -14,5 +14,8 @@ public class Main {
         dlist.printDList();
         dlist.preAppend(8);
         dlist.printDList();
+        System.out.println(dlist.removeFirst().value);
+        dlist.printDList();
+        System.out.println(dlist.get(4).value);
     }
 }
