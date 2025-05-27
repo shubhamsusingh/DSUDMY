@@ -17,5 +17,13 @@ public class Main {
         System.out.println(dlist.removeFirst().value);
         dlist.printDList();
         System.out.println(dlist.get(4).value);
+        dlist.set(4, 6);
+        dlist.printDList();
+        dlist.insert(0, 11);
+        System.out.println(dlist.insert(6, 11));
+        dlist.printDList();
+        System.out.println(dlist.getSize());
+        dlist.remove(0);
+        dlist.printDList();
     }
 }
