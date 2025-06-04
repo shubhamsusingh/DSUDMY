@@ -9,6 +9,9 @@ public class Main {
         sk.push(4);
         sk.push(5);
         sk.Print();
+        sk.pop();
+        sk.pop();
+        sk.Print();
 
     }
 }
