@@ -8,5 +8,9 @@ public class Main {
         System.out.println(bst.insert(1));
         System.out.println(bst.insert(1));
         System.out.println(bst.contains(1));
+        System.out.println(bst.rContains(4));
+        bst.rInsert(4);
+        System.out.println(bst.rContains(4));
+
     }
 }
