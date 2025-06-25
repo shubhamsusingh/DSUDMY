@@ -54,4 +54,45 @@ public class BinarySearchTree {
         return false;
     }
 
+    // tis is for recursive check:-
+
+    private boolean rContains(Node cRootNode, int value) {
+        if (cRootNode == null) {
+            return false;
+        }
+        if (cRootNode.value == value) {
+            return true;
+        }
+        if (cRootNode.value > value) {
+            return rContains(cRootNode.left, value);
+        } else {
+            return rContains(cRootNode.right, value);
+        }
+    }
+
+    public boolean rContains(int value) {
+        return rContains(root, value);
+    }
+
+    // this is for recursive Insert:-
+
+    private Node rInsert(Node currRootNode, int value) {
+        if (currRootNode == null) {
+            return new Node(value);
+        }
+        if (value < currRootNode.value) {
+            currRootNode.left = rInsert(currRootNode.left, value);
+        } else if (value > currRootNode.value) {
+            currRootNode.right = rInsert(currRootNode.right, value);
+        }
+        return currRootNode;
+    }
+
+    public void rInsert(int value) {
+        if (root == null) {
+            root = new Node(value);
+        }
+        rInsert(root, value);
+    }
+
 }
