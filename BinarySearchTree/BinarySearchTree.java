@@ -95,4 +95,40 @@ public class BinarySearchTree {
         rInsert(root, value);
     }
 
+    // Delete Node using Recursion:-
+    private Node DeleteNode(Node currentNode, int value) {
+        if (currentNode == null) {
+            return null;
+        }
+        if (value < currentNode.value) {
+            currentNode.left = DeleteNode(currentNode.left, value);
+        } else if (value > currentNode.value) {
+            currentNode.right = DeleteNode(currentNode.right, value);
+        } else {
+            if (currentNode.left == null && currentNode.right == null) {
+                currentNode = null;
+            } else if (currentNode.left == null) {
+                currentNode = currentNode.right;
+            } else if (currentNode.right == null) {
+                currentNode = currentNode.left;
+            } else {
+                int subTreemin = minValue(currentNode.right);
+                currentNode.value = subTreemin;
+                currentNode.right = DeleteNode(currentNode.right, subTreemin);
+            }
+        }
+        return currentNode;
+    }
+
+    private int minValue(Node currentNode) {
+        while (currentNode.left != null) {
+            currentNode = currentNode.left;
+        }
+        return currentNode.value;
+    }
+
+    public void deleteNode(int value) {
+        DeleteNode(root, value);
+    }
+
 }
