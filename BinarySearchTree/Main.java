@@ -11,6 +11,8 @@ public class Main {
         System.out.println(bst.rContains(4));
         bst.rInsert(4);
         System.out.println(bst.rContains(4));
-
+        // System.out.println(bst.contains(1));
+        bst.deleteNode(4);
+        System.out.println(bst.contains(4));
     }
 }
