@@ -14,5 +14,10 @@ public class Main {
         // System.out.println(bst.contains(1));
         bst.deleteNode(4);
         System.out.println(bst.contains(4));
+        TreeTraversal treeV = new TreeTraversal();
+        bst.rInsert(4);
+        bst.rInsert(7);
+        bst.rInsert(2);
+        System.out.println(treeV.BFS(bst.getRoot()));
     }
 }

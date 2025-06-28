@@ -13,6 +13,10 @@ public class BinarySearchTree {
         }
     }
 
+    public Node getRoot() {
+        return root;
+    }
+
     public boolean insert(int value) {
         Node newNode = new Node(value);
         if (root == null) {
