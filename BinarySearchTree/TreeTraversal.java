@@ -6,9 +6,6 @@ import java.util.Queue;
 
 public class TreeTraversal {
     public ArrayList<Integer> BFS(BinarySearchTree.Node rootNode) {
-        // BinarySearchTree bst = new BinarySearchTree();
-        // BinarySearchTree.Node currentNode = bst.getRoot();
-        // System.out.println(currentNode.value);
         BinarySearchTree.Node currentNode = rootNode;
         Queue<BinarySearchTree.Node> queue = new LinkedList<>();
         ArrayList<Integer> result = new ArrayList<>();
@@ -25,5 +22,22 @@ public class TreeTraversal {
 
         }
         return result;
+    }
+
+    public ArrayList<Integer> DFSPreorder(BinarySearchTree.Node root) {
+        ArrayList<Integer> List = new ArrayList<>();
+        class Traverse {
+            public Traverse(BinarySearchTree.Node currentNode) {
+                List.add(currentNode.value);
+                if (currentNode.left != null) {
+                    new Traverse(currentNode.left);
+                }
+                if (currentNode.right != null) {
+                    new Traverse(currentNode.right);
+                }
+            }
+        }
+        new Traverse(root);
+        return List;
     }
 }
