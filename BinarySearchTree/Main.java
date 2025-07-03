@@ -20,5 +20,7 @@ public class Main {
         bst.rInsert(2);
         System.out.println(treeV.BFS(bst.getRoot()));
         System.out.println(treeV.DFSPreorder(bst.getRoot()));
+        System.out.println(treeV.DFSPostOrder(bst.getRoot()));
+        System.out.println(treeV.DFSInOrder(bst.getRoot()));
     }
 }
