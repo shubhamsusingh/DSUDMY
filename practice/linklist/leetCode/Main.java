@@ -23,5 +23,27 @@ public class Main {
         ld.removeDuplicates();
         System.out.println("remove duolicates");
         ld.printList();
+        LeetCodeDemo ld1 = new LeetCodeDemo();
+        ld1.append(1);
+        ld1.append(0);
+        ld1.append(1);
+        System.out.println("Binary to decimal : " + ld1.binaryToDecimal(ld1.getHead()));
+        LeetCodeDemo dummy = new LeetCodeDemo();
+        dummy.append(3);
+        dummy.append(8);
+        dummy.append(5);
+        dummy.append(10);
+        dummy.append(2);
+        dummy.append(1);
+        System.out.println("Raw Dummy Data : ");
+        dummy.printList();
+        System.out.println("After Partion of List : ");
+        dummy.partionList(5);
+        dummy.printList();
+        System.out.println("after reverse between : ");
+        dummy.reverseBetween(1, 4);
+        dummy.printList();
+
     }
+
 }
