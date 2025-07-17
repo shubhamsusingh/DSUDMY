@@ -11,5 +11,16 @@ public class Main {
         dbList.preAppend(1);
         dbList.preAppend(0);
         dbList.printList();
+        System.out.println("removed data from Last : ");
+        dbList.removeLast();
+        dbList.printList();
+        System.out.println("Remove First : ");
+        dbList.removeFirst();
+        dbList.printList();
+        System.out.println("first Index data : " + dbList.get(1).val);
+        System.out.println("Now set 5 to index 1 ");
+        dbList.set(0, 5);
+        dbList.printList();
+
     }
 }
