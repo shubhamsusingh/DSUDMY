@@ -21,6 +21,12 @@ public class Main {
         System.out.println("Now set 5 to index 1 ");
         dbList.set(0, 5);
         dbList.printList();
+        System.out.println("Insert data at index 1 : ");
+        dbList.insert(0, 7);
+        dbList.printList();
+        System.out.println("Remove Data");
+        System.out.println("removed data : " + dbList.remove(0).val);
+        dbList.printList();
 
     }
 }
