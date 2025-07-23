@@ -86,4 +86,73 @@ public class Question {
             temNode = after;
         }
     }
+
+    public Node get(int index) {
+        if (length < index || index < 0) {
+            return null;
+        }
+        Node temp = head;
+        if (index < length / 2) {
+            for (int i = 0; i < index; i++) {
+                temp = temp.next;
+            }
+        } else {
+            temp = tail;
+            for (int i = length - 1; i > index; i--) {
+                temp = temp.prev;
+            }
+        }
+
+        return temp;
+    }
+
+    public Node removeFirst() {
+        if (head == null) {
+            return null;
+        }
+        Node temp = head;
+        head = head.next;
+        head.prev = null;
+        temp.next = null;
+        length--;
+        return temp;
+    }
+
+    public Node removeLast() {
+        if (head == null) {
+            return null;
+        }
+        Node temp = tail;
+        tail = tail.prev;
+        tail.next = null;
+        temp.prev = null;
+        length--;
+        return temp;
+
+    }
+
+    public Node remove(int index) {
+        if (length < index || length < 0) {
+            return null;
+        }
+        if (index == 0) {
+            Node temp = removeFirst();
+            return temp;
+        }
+        if (index == length - 1) {
+            Node temp = removeLast();
+            return temp;
+        }
+        Node prev = get(index - 1);
+        if (prev != null) {
+            Node removed = prev.next;
+            prev.next = prev.next.next;
+            prev.next.next.prev = prev;
+            removed.next = null;
+            removed.prev = null;
+            return removed;
+        }
+        return null;
+
+    }
 }
