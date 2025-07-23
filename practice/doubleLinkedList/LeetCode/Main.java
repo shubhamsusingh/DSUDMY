@@ -13,5 +13,7 @@ public class Main {
         System.out.println(qt.isPelindrome());
         qt.reverse();
         qt.printList();
+        System.out.println("removed Data" + qt.remove(2).val);
+        qt.printList();
     }
 }
