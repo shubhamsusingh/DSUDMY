@@ -112,4 +112,21 @@ public class BinarySearchTree {
         new Traverse(root);
         return result;
     }
+
+    public ArrayList<Integer> DFSPostOrder() {
+        ArrayList<Integer> result = new ArrayList<>();
+        class Traverse {
+            public Traverse(Node currNode) {
+                if (currNode.left != null) {
+                    new Traverse(currNode.left);
+                }
+                if (currNode.right != null) {
+                    new Traverse(currNode.right);
+                }
+                result.add(currNode.val);
+            }
+        }
+        new Traverse(root);
+        return result;
+    }
 }
