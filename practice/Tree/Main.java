@@ -15,5 +15,6 @@ public class Main {
         System.out.println("BFS : " + bst.BFS().toString());
         System.out.println("DFS PreOrder : " + bst.DFSPreeOrder().toString());
         System.out.println("DFSInOrder : " + bst.DFSInOrder().toString());
+        System.out.println("DFSPostOrder : " + bst.DFSPostOrder());
     }
 }
