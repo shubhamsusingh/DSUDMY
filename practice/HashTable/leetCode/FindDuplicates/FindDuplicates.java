@@ -12,11 +12,17 @@ public class FindDuplicates {
             hMap.put(i, hMap.getOrDefault(i, 0) + 1);
         }
         ArrayList<Integer> result = new ArrayList<>();
+
+        // first Method:-
+
         // for (Map.Entry<Integer, Integer> entry : hMap.entrySet()) {
         // if (entry.getValue() > 1) {
         // result.add(entry.getKey());
         // }
         // }
+
+        // Second Method :-
+
         for (int i : hMap.keySet()) {
             if (hMap.get(i) > 1) {
                 result.add(i);
