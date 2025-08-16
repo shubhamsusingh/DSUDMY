@@ -10,7 +10,7 @@ public class Main {
         graph.printadjList();
         graph.removeEdges("A", "B");
         graph.printadjList();
-        graph.removeVertex("A");
+        // graph.removeVertex("A");
         graph.printadjList();
     }
 }
