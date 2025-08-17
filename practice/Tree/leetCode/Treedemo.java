@@ -47,6 +47,21 @@ public class Treedemo {
 
     }
 
+    public boolean contains(int val) {
+        Node temp = root;
+        while (temp != null) {
+            if (val < temp.val) {
+                temp = temp.left;
+            } else if (val > temp.val) {
+                temp = temp.right;
+            } else {
+                return true;
+            }
+
+        }
+        return false;
+    }
+
     public ArrayList<Integer> BFS() {
         Node currentNode = root;
         Queue<Node> queue = new LinkedList<>();
@@ -65,4 +80,56 @@ public class Treedemo {
         return result;
 
     }
+
+    public ArrayList<Integer> DFSPreeOrder() {
+        ArrayList<Integer> result = new ArrayList<>();
+        class Traverse {
+            public Traverse(Node currentNode) {
+                result.add(currentNode.val);
+                if (currentNode.left != null) {
+                    new Traverse(currentNode.left);
+                }
+                if (currentNode.right != null) {
+                    new Traverse(currentNode.right);
+                }
+            }
+        }
+        new Traverse(root);
+        return result;
+    }
+
+    public ArrayList<Integer> DFSInOrder() {
+        ArrayList<Integer> result = new ArrayList<>();
+        class Traverse {
+            public Traverse(Node currentNode) {
+                if (currentNode.left != null) {
+                    new Traverse(currentNode.left);
+                }
+                result.add(currentNode.val);
+                if (currentNode.right != null) {
+                    new Traverse(currentNode.right);
+                }
+            }
+        }
+        new Traverse(root);
+        return result;
+    }
+
+    public ArrayList<Integer> DFSPostOrder() {
+        ArrayList<Integer> result = new ArrayList<>();
+        class Traverse {
+            public Traverse(Node currentNode) {
+                if (currentNode.left != null) {
+                    new Traverse(currentNode.left);
+                }
+                if (currentNode.right != null) {
+                    new Traverse(currentNode.right);
+                }
+                result.add(currentNode.val);
+            }
+        }
+        new Traverse(root);
+        return result;
+    }
+
 }
