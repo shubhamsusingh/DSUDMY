@@ -20,5 +20,6 @@ public class Main {
         System.out.println("DFSPreeOrder" + tree.DFSPreeOrder());
         System.out.println("DFSInOrder" + tree.DFSInOrder());
         System.out.println("DFSPostOrder" + tree.DFSPostOrder());
+        System.out.println(tree.contains(25));
     }
 }

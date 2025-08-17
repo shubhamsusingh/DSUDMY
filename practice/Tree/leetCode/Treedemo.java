@@ -132,4 +132,23 @@ public class Treedemo {
         return result;
     }
 
+    // recursive method:-
+    private boolean rContains(Node currentNode, int val) {
+        if (currentNode == null) {
+            return false;
+        }
+        if (currentNode.val == val) {
+            return true;
+        }
+        if (val < currentNode.val) {
+            return rContains(currentNode.left, val);
+        } else {
+            return rContains(currentNode.right, val);
+        }
+
+    }
+
+    public boolean rContains(int val) {
+        return rContains(root, val);
+    }
 }
