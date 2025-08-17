@@ -15,6 +15,10 @@ public class Main {
         tree.insert(1);
         tree.insert(15);
         tree.insert(12);
-        System.out.println(tree.BFS());
+        System.out.println("BFS" + tree.BFS());
+        System.out.println(tree.contains(10));
+        System.out.println("DFSPreeOrder" + tree.DFSPreeOrder());
+        System.out.println("DFSInOrder" + tree.DFSInOrder());
+        System.out.println("DFSPostOrder" + tree.DFSPostOrder());
     }
 }
