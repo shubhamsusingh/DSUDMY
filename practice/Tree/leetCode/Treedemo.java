@@ -151,4 +151,25 @@ public class Treedemo {
     public boolean rContains(int val) {
         return rContains(root, val);
     }
+
+    private Node rInsert(Node currentNode, int val) {
+        if (currentNode == null) {
+            return new Node(val);
+        }
+        if (val < currentNode.val) {
+            currentNode.left = rInsert(currentNode.left, val);
+        } else if (val > currentNode.val) {
+            currentNode.right = rInsert(currentNode.right, val);
+        }
+        return currentNode;
+    }
+
+    public void rInsert(int val) {
+        if (root == null) {
+            Node newNode = new Node(val);
+            root = newNode;
+        }
+        rInsert(root, val);
+
+    }
 }

@@ -21,5 +21,7 @@ public class Main {
         System.out.println("DFSInOrder" + tree.DFSInOrder());
         System.out.println("DFSPostOrder" + tree.DFSPostOrder());
         System.out.println(tree.contains(25));
+        tree.rInsert(25);
+        System.out.println(tree.BFS());
     }
 }
