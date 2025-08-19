@@ -19,6 +19,10 @@ public class Treedemo {
         }
     }
 
+    public Node getRoot() {
+        return root;
+    }
+
     public boolean insert(int val) {
         Node newNode = new Node(val);
         if (root == null) {
@@ -170,6 +174,31 @@ public class Treedemo {
             root = newNode;
         }
         rInsert(root, val);
+    }
 
+    public int minValue(Node currentNode) {
+        while (currentNode.left != null) {
+            currentNode = currentNode.left;
+        }
+        return currentNode.val;
+    }
+
+    public Node delete(Node currentNode, int val) {
+        if (currentNode == null) {
+            return null;
+        }
+        if (val < currentNode.val) {
+            currentNode.left = delete(currentNode.left, val);
+        } else {
+            if (currentNode.left == null && currentNode.right == null) {
+                return null;
+            } else if (currentNode.left == null) {
+                currentNode = currentNode.right;
+            } else if (currentNode.right == null) {
+                currentNode = currentNode.left;
+            } else {
+
+            }
+        }
     }
 }
