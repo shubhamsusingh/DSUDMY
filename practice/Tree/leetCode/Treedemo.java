@@ -183,12 +183,14 @@ public class Treedemo {
         return currentNode.val;
     }
 
-    public Node delete(Node currentNode, int val) {
+    private Node delete(Node currentNode, int val) {
         if (currentNode == null) {
             return null;
         }
         if (val < currentNode.val) {
             currentNode.left = delete(currentNode.left, val);
+        } else if (val > currentNode.val) { // ✅ missing condition added
+            currentNode.right = delete(currentNode.right, val);
         } else {
             if (currentNode.left == null && currentNode.right == null) {
                 return null;
@@ -197,8 +199,20 @@ public class Treedemo {
             } else if (currentNode.right == null) {
                 currentNode = currentNode.left;
             } else {
-
+                int subTreeMin = minValue(currentNode.right);
+                currentNode.val = subTreeMin;
+                currentNode.right = delete(currentNode.right, subTreeMin);
             }
+        }
+        return currentNode;
+    }
+
+    public boolean delete(int val) {
+        Node deleted = delete(root, val);
+        if (deleted != null) {
+            return true;
+        } else {
+            return false;
         }
     }
 }
