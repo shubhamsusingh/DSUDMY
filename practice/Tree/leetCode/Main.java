@@ -26,5 +26,12 @@ public class Main {
         System.out.println(tree.minValue(tree.getRoot()));
         System.out.println("Data Deleted : " + tree.delete(12));
         System.out.println(tree.BFS());
+        Treedemo tree1 = new Treedemo();
+        tree1.insert(3);
+        tree1.insert(9);
+        tree1.insert(20);
+        tree1.insert(15);
+        tree1.insert(7);
+        System.out.println(tree1.BFS());
     }
 }
