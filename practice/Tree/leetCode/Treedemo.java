@@ -189,7 +189,7 @@ public class Treedemo {
         }
         if (val < currentNode.val) {
             currentNode.left = delete(currentNode.left, val);
-        } else if (val > currentNode.val) { // ✅ missing condition added
+        } else if (val > currentNode.val) {
             currentNode.right = delete(currentNode.right, val);
         } else {
             if (currentNode.left == null && currentNode.right == null) {
