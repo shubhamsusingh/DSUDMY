@@ -23,5 +23,6 @@ public class Main {
         System.out.println(tree.contains(25));
         tree.rInsert(25);
         System.out.println(tree.BFS());
+        System.out.println(tree.minValue(tree.getRoot()));
     }
 }
