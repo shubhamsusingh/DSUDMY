@@ -193,4 +193,25 @@ public class LinkedList {
         }
     }
 
+    public Node deleteDuplicates(Node head) {
+        if (head == null) {
+            return head;
+        }
+
+        Node current = head;
+        while (current != null) {
+            Node prev = current;
+            Node runner = current.next;
+            while (runner != null) {
+                if (current.value == runner.value) {
+                    prev.next = runner.next;
+                } else {
+                    prev = runner;
+                }
+                runner = runner.next;
+            }
+            current = current.next;
+        }
+        return head;
+    }
 }
